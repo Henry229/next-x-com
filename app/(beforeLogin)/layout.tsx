@@ -7,8 +7,7 @@ type Props = {
 
 export default function Layout({ children, modal }: Props) {
   return (
-    <div className='h-screen flex w-full'>
-      beforeLogin Layout
+    <div className='w-screen h-screen flex justify-center items-center'>
       {children}
       {modal}
     </div>
