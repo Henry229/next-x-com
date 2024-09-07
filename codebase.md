@@ -1,0 +1,807 @@
+# tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+```
+
+# tailwind.config.ts
+
+```ts
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
+
+```
+
+# postcss.config.mjs
+
+```mjs
+/** @type {import('postcss-load-config').Config} */
+const config = {
+  plugins: {
+    tailwindcss: {},
+  },
+};
+
+export default config;
+
+```
+
+# package.json
+
+```json
+{
+  "name": "x-com",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "next": "14.2.5"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5"
+  }
+}
+
+```
+
+# next.config.mjs
+
+```mjs
+/** @type {import('next').NextConfig} */
+const nextConfig = {};
+
+export default nextConfig;
+
+```
+
+# next-env.d.ts
+
+```ts
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+// see https://nextjs.org/docs/basic-features/typescript for more information.
+
+```
+
+# README.md
+
+```md
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+\`\`\`bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+\`\`\`
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+```
+
+# .gitignore
+
+```
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+```
+
+# .eslintrc.json
+
+```json
+{
+  "extends": "next/core-web-vitals"
+}
+
+```
+
+# public/zlogo.png
+
+This is a binary file of the type: Image
+
+# public/yRsRRjGO.jpg
+
+This is a binary file of the type: Image
+
+# public/vercel.svg
+
+This is a file of the type: SVG Image
+
+# public/next.svg
+
+This is a file of the type: SVG Image
+
+# public/favicon.png
+
+This is a binary file of the type: Image
+
+# public/5Udwvqim.jpg
+
+This is a binary file of the type: Image
+
+# app/not-found.tsx
+
+```tsx
+import Link from 'next/link';
+
+export default function NotFound(): JSX.Element {
+  return (
+    <div>
+      <h1>404 - Page Not Found, please try again</h1>
+      <Link href='/search'>Search</Link>
+    </div>
+  );
+}
+
+```
+
+# app/layout.tsx
+
+```tsx
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: 'Create Next App',
+  description: 'Generated by create next app',
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang='en'>
+      <body className={inter.className}>{children}</body>
+    </html>
+  );
+}
+
+```
+
+# app/globals.css
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+```
+
+# app/favicon.ico
+
+This is a binary file of the type: Binary
+
+# .vscode/settings.json
+
+```json
+{
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ffd992",
+    "activityBar.background": "#ffd992",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#009f68",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#ffd992",
+    "statusBar.background": "#ffc75f",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#ffb52c",
+    "statusBarItem.remoteBackground": "#ffc75f",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#ffc75f",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#ffc75f99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#FFC75F"
+}
+
+```
+
+# app/(afterLogin)/layout.tsx
+
+```tsx
+import { ReactNode } from 'react';
+
+export default function AfterLoginLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  return (
+    <div className='flex bg-white items-stretch'>
+      <header className='flex flex-col items-end flex-grow'>
+        <section
+          className='w-[275px] h-screen'
+          style={{ height: '100dvh' }}
+        ></section>
+      </header>
+      <div
+        className='flex flex-col flex-grow items-start'
+        style={{ height: '100dvh' }}
+      >
+        <div>
+          <main></main>
+          <section></section>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+```
+
+# app/(beforeLogin)/page.tsx
+
+```tsx
+import React from 'react';
+import MainPage from './_component/Main';
+
+export default function HomePage() {
+  return <MainPage />;
+}
+
+```
+
+# app/(beforeLogin)/layout.tsx
+
+```tsx
+import { ReactNode } from 'react';
+
+type Props = {
+  children: ReactNode;
+  modal: ReactNode;
+};
+
+export default function Layout({ children, modal }: Props) {
+  return (
+    <div className='w-screen h-screen flex justify-center items-center'>
+      {children}
+      {modal}
+    </div>
+  );
+}
+
+```
+
+# app/(afterLogin)/explore/page.tsx
+
+```tsx
+
+```
+
+# app/(afterLogin)/[username]/page.tsx
+
+```tsx
+export default function UserNamePage() {
+  return <div>UserNamePage</div>;
+}
+
+```
+
+# app/(afterLogin)/home/page.tsx
+
+```tsx
+export default function HomePage() {
+  return <main>HomePage</main>;
+}
+
+```
+
+# app/(afterLogin)/home/layout.tsx
+
+```tsx
+import { ReactNode } from 'react';
+
+export default function HomeLayout({ children }: { children: ReactNode }) {
+  return (
+    <div>
+      <div>HomeLayout{children}</div>
+    </div>
+  );
+}
+
+```
+
+# app/(beforeLogin)/login/page.tsx
+
+```tsx
+'use client';
+
+import { useRouter } from 'next/navigation';
+import MainPage from '../_component/Main';
+
+export default function LoginPage() {
+  const router = useRouter();
+  router.replace('/i/flow/login');
+  return <MainPage />;
+}
+
+```
+
+# app/(beforeLogin)/@modal/default.tsx
+
+```tsx
+export default function Default() {
+  return null;
+}
+
+```
+
+# app/(beforeLogin)/_component/SignUpModal.tsx
+
+```tsx
+'use client';
+
+import { useState } from 'react';
+
+export default function SignUpModal() {
+  const [id, setID] = useState();
+  const [password, setPassword] = useState();
+  const [nickname, setNickname] = useState();
+  const [image, setImage] = useState();
+  const [message, setMessage] = useState();
+
+  const onSubmit = () => {};
+
+  const onClickClose = () => {};
+
+  const onChangeId = () => {};
+
+  const onChangeNickname = () => {};
+
+  const onChangePassword = () => {};
+
+  const onChangeImage = () => {};
+
+  return (
+    <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center'>
+      <div className='bg-white text-black rounded-lg w-96 p-6'>
+        <div className='flex justify-between items-center mb-4'>
+          <button
+            onClick={onClickClose}
+            className='text-gray-500 hover:text-gray-700'
+          >
+            <svg
+              width={24}
+              viewBox='0 0 24 24'
+              aria-hidden='true'
+              className='r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03'
+            >
+              <g>
+                <path d='M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z'></path>
+              </g>
+            </svg>
+          </button>
+          <div className='text-black text-xl font-bold mx-auto'>SignUp</div>
+          <div className='w-6'></div>
+        </div>
+        <form onSubmit={onSubmit} className='space-y-4'>
+          <div className='space-y-2'>
+            <div>
+              <label
+                className='block text-sm font-medium text-gray-700'
+                htmlFor='id'
+              >
+                ID
+              </label>
+              <input
+                id='id'
+                className='mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500'
+                value={id}
+                onChange={onChangeId}
+                type='text'
+                placeholder=''
+              />
+            </div>
+            <div>
+              <label
+                className='block text-sm font-medium text-gray-700'
+                htmlFor='name'
+              >
+                NickName
+              </label>
+              <input
+                id='name'
+                className='mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500'
+                value={nickname}
+                onChange={onChangeNickname}
+                type='text'
+                placeholder=''
+              />
+            </div>
+            <div>
+              <label
+                className='block text-sm font-medium text-gray-700'
+                htmlFor='password'
+              >
+                Password
+              </label>
+              <input
+                id='password'
+                className='mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500'
+                value={password}
+                onChange={onChangePassword}
+                type='password'
+                placeholder=''
+              />
+            </div>
+            <div>
+              <label
+                className='block text-sm font-medium text-gray-700'
+                htmlFor='image'
+              >
+                Profile
+              </label>
+              <input
+                id='image'
+                className='mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500'
+                value={image}
+                onChange={onChangeImage}
+                type='file'
+                accept='image/*'
+                placeholder=''
+              />
+            </div>
+          </div>
+          <div className='text-red-500 text-sm'>{message}</div>
+          <div>
+            <button
+              className='w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed'
+              disabled={!id && !password}
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+```
+
+# app/(beforeLogin)/_component/Main.tsx
+
+```tsx
+import React from 'react';
+import zLogo from '/public/zlogo.png';
+import Image from 'next/image';
+import Link from 'next/link';
+
+export default function MainPage() {
+  return (
+    <div className='flex bg-black-900 h-screen'>
+      <div className='flex-1 flex items-center justify-center'>
+        <Image src={zLogo} alt='logo' className='w-3/4 max-w-md' />
+      </div>
+      <div className='flex-1 flex flex-col justify-center px-8'>
+        <h1 className='text-5xl font-bold mb-12'>What&apos;s happend now</h1>
+        <h2 className='text-3xl font-bold mb-8'>Join now</h2>
+        <Link
+          href='/i/flow/signup'
+          className='bg-blue-500 text-white font-bold py-2 px-4 rounded-full mb-8 text-center w-72 hover:opacity-80 hover:text-white transition-all'
+        >
+          Create Account
+        </Link>
+        <h3 className='mb-4'>Already have an account?</h3>
+        <Link
+          href='/login'
+          className='border border-gray-600 text-blue-600 font-bold py-2 px-4 rounded-full text-center w-72 hover:opacity-80 hover:bg-sky-100 transition-all'
+        >
+          Login
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+```
+
+# app/(beforeLogin)/_component/LoginModal.tsx
+
+```tsx
+'use client';
+
+import { useState } from 'react';
+
+export default function LoginModal() {
+  const [id, setID] = useState();
+  const [password, setPassword] = useState();
+  const [message, setMessage] = useState();
+
+  const onSubmit = () => {};
+
+  const onClickClose = () => {};
+
+  const onChangeId = () => {};
+
+  const onChangePassword = () => {};
+
+  return (
+    <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center'>
+      <div className='bg-white text-black rounded-lg w-96 p-6'>
+        <div className='flex justify-between items-center mb-4'>
+          <button
+            onClick={onClickClose}
+            className='text-gray-500 hover:text-gray-700'
+          >
+            <svg
+              width={24}
+              viewBox='0 0 24 24'
+              aria-hidden='true'
+              className='r-18jsvk2 r-4qtqp9 r-yyyyoo r-z80fyv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-19wmn03'
+            >
+              <g>
+                <path d='M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z'></path>
+              </g>
+            </svg>
+          </button>
+          <div className='text-black text-xl font-bold mx-auto'>Login</div>
+          <div className='w-6'></div>
+        </div>
+        <form onSubmit={onSubmit} className='space-y-4'>
+          <div className='space-y-2'>
+            <div>
+              <label
+                className='block text-sm font-medium text-gray-700'
+                htmlFor='id'
+              >
+                ID
+              </label>
+              <input
+                id='id'
+                className='mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500'
+                value={id}
+                onChange={onChangeId}
+                type='text'
+                placeholder=''
+              />
+            </div>
+            <div className=''>
+              <label
+                className='block text-sm font-medium text-gray-700'
+                htmlFor='password'
+              >
+                Password
+              </label>
+              <input
+                id='password'
+                className='mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500'
+                value={password}
+                onChange={onChangePassword}
+                type='password'
+                placeholder=''
+              />
+            </div>
+          </div>
+          <div className='text-red-500 text-sm'>{message}</div>
+          <div>
+            <button
+              className='w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed'
+              disabled={!id && !password}
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+```
+
+# app/(afterLogin)/compose/tweet/page.tsx
+
+```tsx
+
+```
+
+# app/(afterLogin)/[username]/status/[id]/page.tsx
+
+```tsx
+
+```
+
+# app/(beforeLogin)/i/flow/signup/page.tsx
+
+```tsx
+import SignUpModal from '@/app/(beforeLogin)/_component/SignUpModal';
+
+export default function ParallelRoutePage() {
+  return <SignUpModal />;
+}
+
+```
+
+# app/(beforeLogin)/i/flow/login/page.tsx
+
+```tsx
+import LoginModal from '@/app/(beforeLogin)/_component/LoginModal';
+
+export default function ParallelRoutePage() {
+  return <LoginModal />;
+}
+
+```
+
+# app/(beforeLogin)/@modal/(.)i/flow/login/page.tsx
+
+```tsx
+import LoginModal from '@/app/(beforeLogin)/_component/LoginModal';
+
+export default function ParallelRouteLoginPage() {
+  return <LoginModal />;
+}
+
+```
+
+# app/(beforeLogin)/@modal/(.)i/flow/signup/page.tsx
+
+```tsx
+import SignUpModal from '@/app/(beforeLogin)/_component/SignUpModal';
+
+export default function ParallelRoutePage() {
+  return <SignUpModal />;
+}
+
+```
+
