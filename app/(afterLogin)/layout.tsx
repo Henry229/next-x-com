@@ -48,7 +48,9 @@ export default function AfterLoginLayout({
           </div>
         </div>
         {/* 메인 컨텐츠 */}
-        <main className='flex-grow min-w-0 bg-cyan-500'>{children}</main>
+        <main className='flex-grow min-w-0 w-[600px] border-x border-gray-200 text-black relative '>
+          {children}
+        </main>
         {/* 오른쪽 사이드바 */}
         <div className='w-[350px] flex-shrink-0 ml-[2%]'>
           <div className='fixed w-[350px]'>
