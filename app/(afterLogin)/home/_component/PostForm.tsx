@@ -36,7 +36,7 @@ export default function PostForm() {
           <textarea
             value={content}
             onChange={handleContentChange}
-            placeholder='무슨 일이 일어나고 있나요?'
+            placeholder='what is happening?'
             className='w-full h-24 resize-none border-none focus:ring-0 text-lg placeholder-gray-400'
           />
           <div className='flex justify-between items-center'>
