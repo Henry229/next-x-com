@@ -1,4 +1,10 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
+
 export default function TrendSection() {
+  const pathname = usePathname();
+  if (pathname === '/explore') return null;
   const trends = Array.from({ length: 10 }, (_, i) => ({
     trendName: `트렌드 ${i + 1}`,
     posts: Math.floor(Math.random() * 10000) + 1,
